@@ -16,7 +16,7 @@ def select_all():
     sql = "SELECT * FROM merchants"
     results = run_sql(sql)
     for row in results:
-        merchant = Merchant(row['name'], row['category'], row['amoount'], row['id'])
+        merchant = Merchant(row['name'], row['category'], row['amount'], row['id'])
         merchants.append(merchant)
     
     return merchants
