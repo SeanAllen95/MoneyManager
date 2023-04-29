@@ -5,3 +5,10 @@ class Account:
         self.type = type
         self.balance = balance
         self.id = id
+
+    def increase_balance(self, amount):
+        self.balance += amount
+    
+    def decrease_balance(self, amount):
+        self.balance -= amount
+        
