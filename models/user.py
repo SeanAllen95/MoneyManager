@@ -1,6 +1,5 @@
 class User:
 
-    def __init__(self, name, cash, id = None):
+    def __init__(self, name, id = None):
         self.name = name
-        self.cash = cash
         self.id = id
