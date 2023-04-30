@@ -25,3 +25,6 @@ merchant_repository.save(merchant2)
 merchant3 = Merchant("Scottish Power", "Bills", 100)
 merchant_repository.save(merchant3)
 
+merchant4 = Merchant("Winchester", "Pub", 15)
+merchant_repository.save(merchant4)
+

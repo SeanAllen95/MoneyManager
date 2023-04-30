@@ -14,50 +14,16 @@ def merchant():
     merchant = merchant_repository.select_all()
     return render_template("merchant/index.html", merchant = merchant)
 
-# @merchant_blueprint.route('/add_merchant', methods=['POST'])
-# def add_merchant_route():
-#     name = request.form['name']
-#     category = request.form['category']
-#     amount = request.form['amount']
-#     merchant_repository.add_merchant(name, category, amount)
-#     return redirect(url_for('merchant'))
+@merchant_blueprint.route("/merchant/new")
+def new_merchant():
+    merchant = merchant_repository.select_all()
+    return render_template("merchant/new.html")
 
-
-
-# @merchant_blueprint.route("/add_merchant", methods=["POST"])
-# def add_merchant():
-#     name = request.form["name"]
-#     category = request.form["category"]
-#     amount = request.form["amount"]
-#     merchant = Merchant(name=name, category=category, amount=amount)
-#     db.session.add(merchant)
-#     db.session.commit()
-#     return redirect(url_for("merchant.merchant"))
-
-# @merchant_blueprint.route("/merchant",  methods=['POST'])
-# def add_merchant():
-#     name = request.form['name']
-#     category = request.form['category']
-#     amount = request.form['amount']
-#     name = merchant_repository.select(name)
-#     category = merchant_repository.select(category)
-#     new_merchant = Merchant(name, category, amount)
-#     merchant_repository.save(new_merchant)
-#     return redirect('/merchant')
-
-
-# @merchant_blueprint.route("/merchant", methods=["POST"])
-# def add_merchant(new_merchant):
-#     name = request.form["name"]
-#     category = request.form["category"]
-#     amount = request.form["amount"]
-#     new_merchant = Merchant(name, category, amount)
-#     add_merchant(new_merchant)
-#     return redirect("/merchant")
-
-
-# @users_blueprint.route("/users/<id>")
-# def show(id):
-#     user = user_repository.select(id)
-#     locations = location_repository.locations_by_user(user)
-#     return render_template("users/show.html", user=user, locations=locations)
+@merchant_blueprint.route("/merchant",  methods=['POST'])
+def create_merchant():
+    name = request.form['name']
+    category = request.form['category']
+    amount = request.form['amount']
+    merchant = Merchant(name, category, amount)
+    merchant_repository.save(merchant)
+    return redirect('/merchant')
