@@ -8,7 +8,6 @@ app = Flask(__name__)
 
 app.register_blueprint(user_blueprint)
 app.register_blueprint(merchant_blueprint)
-# app.register_blueprint(users_blueprint)
 
 @app.route('/')
 def home():

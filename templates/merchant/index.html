@@ -1,7 +1,22 @@
 {% extends 'base.html'%}
 
 {% block content %}
-<h1>Merchant page</h1>
 
-<p>wow u have no money</p>
+<div>
+  <h1>Merchant page</h1>
+  {% if merchant %}
+    <div class="merchant-grid">
+      {% for m in merchant %}
+        <div class="merchant-card">
+          <h2>{{ m.name }}</h2>
+          <p>Category: {{ m.category }}</p>
+          <p>Amount: {{ m.amount }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No merchants found.</p>
+  {% endif %}
+</div>
+
 {% endblock %}

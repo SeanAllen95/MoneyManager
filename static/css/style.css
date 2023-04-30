@@ -1,0 +1,18 @@
+body {
+    background-color: aqua;
+}
+
+section {
+    grid-template-columns: auto;
+}
+
+.merchant-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+  }
+
+  .merchant-card {
+    border: 1px solid black;
+    padding: 10px;
+  }
