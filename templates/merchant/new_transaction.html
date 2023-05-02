@@ -26,12 +26,13 @@
         <label for="amount">Amount:</label>
         <input type="int" id="amount" name="amount" placeholder="Amount" required>
         </div>
-    
-        <form method="post" action="/merchant/{{merchant.id}}/new_transaction">
+        
+        <button type="submit">Add Transaction</button>
+
+        <!-- <form method="post" action="/merchant">
             <input type="hidden" name="_method" value="UPDATE">
             <button type="submit">Add New Transaction</button>
-          </form>  
-        </form>  
+        </form>   -->
     </form>
 
 {% endblock %}
