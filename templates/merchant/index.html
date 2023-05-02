@@ -15,6 +15,12 @@
 
           <a href="/merchant/edit/{{ m.id }}">Edit Merchant</a>
           <a href="/merchant/view/{{ m.id }}">View Merchant</a>
+          {# <a href="/merchant/delete/{{ m.id }}">Delete Merchant</a> #}
+          <form method="post" action="/merchant/{{m.id}}">
+            <input type="hidden" name="_method" value="DELETE">
+            <button type="submit">Delete Merchant</button>
+          </form>
+
         </div>
       {% endfor %}
     </div>
