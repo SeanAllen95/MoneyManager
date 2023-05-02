@@ -12,6 +12,7 @@
             {% endfor %}
         </select>
         </div>
+
         <div>
         <label for="category">Select a Category:</label>
         <select name="category" id="category">
@@ -26,8 +27,11 @@
         <input type="int" id="amount" name="amount" placeholder="Amount" required>
         </div>
     
-        <button type="submit">Add Merchant</button>
-  
+        <form method="post" action="/merchant/{{merchant.id}}/new_transaction">
+            <input type="hidden" name="_method" value="UPDATE">
+            <button type="submit">Add New Transaction</button>
+          </form>  
+        </form>  
     </form>
 
 {% endblock %}

@@ -13,10 +13,10 @@
           <p>Amount: {{ m.amount }}</p>
           <p>Id: {{ m.id }}</p>
 
-          <a href="/merchant/edit/{{ m.id }}">Edit Merchant</a>
-          <a href="/merchant/view/{{ m.id }}">View Merchant</a>
-          {# <a href="/merchant/delete/{{ m.id }}">Delete Merchant</a> #}
-          <form method="post" action="/merchant/{{m.id}}">
+          <a href="/merchant/{{m.id}}/edit">Edit Merchant</a>
+          <a href="/merchant/{{m.id}}/view">View Merchant</a>
+          
+          <form method="post" action="/merchant/{{m.id}}/delete">
             <input type="hidden" name="_method" value="DELETE">
             <button type="submit">Delete Merchant</button>
           </form>
