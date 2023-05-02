@@ -11,6 +11,10 @@
           <h2>{{ m.name }}</h2>
           <p>Category: {{ m.category }}</p>
           <p>Amount: {{ m.amount }}</p>
+          <p>Id: {{ m.id }}</p>
+
+          <a href="/merchant/edit/{{ m.id }}">Edit Merchant</a>
+          <a href="/merchant/view/{{ m.id }}">View Merchant</a>
         </div>
       {% endfor %}
     </div>
@@ -20,3 +24,4 @@
 </div>
 
 {% endblock %}
+

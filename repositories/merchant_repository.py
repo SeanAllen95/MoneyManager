@@ -22,14 +22,6 @@ def select_all():
     
     return merchants
 
-# def add_merchant(name, category, amount):
-#     conn = psycopg2.connect(database="money_manager")
-#     cur = conn.cursor()
-#     cur.execute("INSERT INTO merchants (name, category, amount) VALUES (%s, %s, %s)", (name, category, amount))
-#     conn.commit()
-#     cur.close()
-#     conn.close()
-
 def select(id):
     merchant = None
     sql = "SELECT * FROM merchants WHERE id = %s"
@@ -37,7 +29,7 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        merchant = Merchant(result['name'], result['category'], result['amount'] )
+        merchant = Merchant(result['name'], result['category'], result['amount'], result['id'])
     return merchant
 
 def delete_all():

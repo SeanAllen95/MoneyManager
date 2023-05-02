@@ -9,26 +9,15 @@
 </head>
 <body>
     <header>
-        <h1>Money Manager</h1>
-        <nav>
-            <ul>
-                <li>
-                    <a href="/">Home</a>
-                </li>
-                <li>
-                    <a href="/user">User</a>
-                </li>
-                <li>
-                    <a href="/merchant">Merchant</a>
-                </li>
-                <li>
-                    <a href="/merchant/new">New Merchant</a>
-                </li>
-            </ul>
-        </nav>
+        <section class="top_banner">
+        <a href="/">Money Manager</a>
+        <h1>Balance: £</h1>
+        <a href="/user">User Profile</a>
+        </section>
     </header>
-    <main>
-        <section id="content">
+    <main class="home_page_grid">
+
+        <section>
             {% block content %}
       
             {% endblock%}
