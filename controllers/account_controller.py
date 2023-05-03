@@ -4,19 +4,20 @@ from models.user import User
 from models.account import Account
 import repositories.user_repository as user_repository
 import repositories.account_repository as account_repository
+import repositories.merchant_repository as merchant_repository
 
 account_blueprint = Blueprint("account", __name__)
 
 @account_blueprint.route("/account")
-def account(id):
-    account = account_repository.select(id)
-    account = account[0]["id"]
+def account():
+    account = account_repository.select_all()
     return render_template("account/index.html", account = account)
 
 @account_blueprint.route("/account/transactions")
 def transactions():
     account = account_repository.select_all()
-    return render_template("account/transactions.html", account = account)
+    merchants = merchant_repository.select_all()
+    return render_template("account/transactions.html", account = account, merchants = merchants)
 
 @account_blueprint.route("/account/new")
 def new_account():

@@ -3,7 +3,7 @@
 {% block content %}
 <h1>Edit merchant!</h1>
 
-<form action="/merchant" method="post">
+<form action="/merchant/{{merchant.id}}" method="post">
     <div>
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" value="{{merchant.name}}" required autofocus>
@@ -19,10 +19,7 @@
       <input type="number" id="amount" name="amount" value="{{merchant.amount}}" required>
     </div>
   
-    <form method="post" action="/merchant/{{merchant.id}}/update">
-      <input type="hidden" name="_method" value="UPDATE">
       <button type="submit">Update Merchant</button>
-    </form>  
   </form>
   
 

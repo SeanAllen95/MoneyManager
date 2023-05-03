@@ -4,5 +4,38 @@
   <h1>Transactions page</h1>
     
 
+  <h1>New Transaction!</h1>
+  
+      <form action="/merchant" method="post">
+          <div>
+          <label for="merchants">Select a Merchant:</label>
+          <select name="merchants" id="merchants">
+              {% for merchant in merchants %}
+              <option value="{{ merchant.name }}">{{ merchant.name }}</option>
+              {% endfor %}
+          </select>
+          </div>
+  
+          <div>
+          <label for="category">Select a Category:</label>
+          <select name="category" id="category">
+              {% for merchant in merchants %}
+              <option value="{{ merchant.category }}">{{ merchant.category }}</option>
+              {% endfor %}
+          </select>
+          </div>
+      
+          <div>
+          <label for="amount">Amount:</label>
+          <input type="int" id="amount" name="amount" placeholder="Amount" required>
+          </div>
+          
+          <button type="submit">Add Transaction</button>
+  
+          <!-- <form method="post" action="/merchant">
+              <input type="hidden" name="_method" value="UPDATE">
+              <button type="submit">Add New Transaction</button>
+          </form>   -->
+      </form>
 {% endblock %}
   

@@ -11,22 +11,20 @@ section {
     grid-template-columns: auto;
 }
 
-.home_page_grid {
-  
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 20px;
+.home_container {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
 
 }
-.merchant-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 20px;
+.left_column {
+    float: left;
+    width: 30%;
   }
 
-  .merchant-card {
-    border: 1px solid black;
-    padding: 10px;
+.right_column {
+    float: right;
+    width: 70%;
   }
 
   

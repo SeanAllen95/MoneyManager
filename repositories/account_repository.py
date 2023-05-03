@@ -17,7 +17,7 @@ def select_all():
     sql = "SELECT * FROM accounts"
     results = run_sql(sql)
     for row in results:
-        account = Account(row['type'], row['balance'], row['user_id'], row['id'])
+        account = Account( row['id'], row['type'], row['balance'], row['user_id'])
         accounts.append(account)
     
     return accounts

@@ -2,16 +2,15 @@
 
 {% block content %}
 <h1>Homepage</h1>
-    <section class="home_page_grid">
-        <a href="/account">Account Summary</a>
-        <a href="/merchant">Merchants</a>
-        <a href="/merchant/transactions">Transactions</a>
-        <a href="/merchant/new">Add new Merchant</a>
-        <a href="/merchant/new_transaction">Add new Transaction</a>
+    <section class="home_container">
+        <ol class="left_column">
+            <li><a href="/account">Account balance</a></li>
+            <li><a href="/merchant">Merchants</a></li>
+            <li><a href="/merchant/new">Add new Merchant</a></li>
+        </ol>
     </section>
     <main>
-        
-        <h1>Budget:</h1>
+     
     </main>
 
 {% endblock %}

@@ -1,6 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div>
+    <h1>ACCOUNT</h1>
+        {% if account %}
+            {% for a in account %}
+            <div class="merchant-card">
+                <h2>{{ a.type }}</h2>
+                <p>{{ a.balance }}</p>
+                <p>{{ a.user_id }}</p>    
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p>No merchants found.</p>
+        {% endif %}
+</div>
+<li><a href="/account/transactions">Transactions</a></li>
+<li><a href="/new_transaction">Add new Transaction</a></li>
 
-<h1>ACCOUNT</h1>
+
 {% endblock %}
